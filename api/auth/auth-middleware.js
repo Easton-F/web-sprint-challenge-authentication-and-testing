@@ -2,8 +2,7 @@ const User = require('../model')
 
 function checkCredsValidation(req, res, next) {
     if (!req.body.username || !req.body.password) {
-        next({
-            status: 422,
+        res.status(422).json({
             message: 'username and password required',
         })
     } else {
@@ -17,7 +16,9 @@ async function checkUsernameFree(req, res, next) {
         if (!users.length) {
           next()
         } else {
-          next({ status: 422, message: "Username taken" })
+            res.status(422).json({
+                message: "Username taken",
+            })
         }
     } catch (err) {
       next(err)
