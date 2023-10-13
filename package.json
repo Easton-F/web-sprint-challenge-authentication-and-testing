@@ -10,9 +10,6 @@
     "test": "cross-env NODE_ENV=testing jest --verbose --runInBand --silent",
     "seed": "knex seed:run"
   },
-  "jest": {
-    "testEnvironment": "node"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BloomInstituteOfTechnology/web-sprint-challenge-authentication-and-testing.git"
